@@ -23,7 +23,7 @@
 <body>
 <main>
 <h1>Kiba — Privacy Policy</h1>
-<p class="updated">Last updated: August 12, 2026</p>
+<p class="updated">Last updated: September 7, 2026</p>
 
 <p>Kiba (“we”, “us”) is a pet food scanner app that scores pet food against your pet's profile. This policy explains what the app collects, why, and who it goes to.</p>
 
@@ -50,13 +50,16 @@
 <p>If you use the camera to add a product we don't have, the photo of the label is sent to our server and processed by an automated text-recognition service to read the ingredient list. See §4.</p>
 
 <h3>Purchases</h3>
-<p>If you subscribe, the purchase is processed by Apple and managed through RevenueCat. <strong>We never see your payment card.</strong> We receive an anonymous subscriber identifier and your subscription status.</p>
+<p>If you buy an annual or Lifetime membership, Apple processes your payment and RevenueCat validates the purchase and manages Premium access. Kiba does not receive your payment-card details.</p>
+<p>Kiba sends RevenueCat the randomly generated user identifier for your anonymous Kiba account. This pseudonymous identifier links purchase and membership status to the correct Kiba account. RevenueCat also maintains its own customer and transaction identifiers; these may be linked when an existing anonymous purchase identity is associated with your Kiba account or an eligible purchase is restored.</p>
+<p>Kiba receives purchase information such as product identifiers, purchase dates, and membership status, including whether access is active, expires, or is set to renew. This includes annual subscriptions and one-time Lifetime purchases. We use this information to provide and restore Premium access and to handle membership support. We also review aggregate membership measures, including paid conversion, plan choices, proceeds and refunds, to understand membership use and operate Kiba.</p>
+<p>This purchase association does not create a username, password or recoverable account for your pet data. Eligible App Store purchases can be restored using the same Apple account; restoring a membership does not recover other app data or establish cross-platform access.</p>
 
 <h3>What we do NOT collect</h3>
 <p>No contacts, no precise location, no advertising identifiers, no browsing history outside the app, no microphone audio, and no photos from your library other than ones you deliberately select for a pet photo or a label scan.</p>
 
 <h2>3. Why we store it, and what we don't do with it</h2>
-<p>We store this information for one reason: <strong>to operate the app for you</strong> — to compute a score for your pet, keep your pantry and history, and send the alerts you asked for.</p>
+<p>We store this information for one reason: <strong>to operate the app for you</strong> — to compute a score for your pet, keep your pantry and history, send the alerts you asked for, and provide and restore your Premium membership.</p>
 <p>We do <strong>not</strong>:</p>
 <ul>
   <li>sell or rent your information to anyone;</li>
@@ -73,7 +76,7 @@
   <tr><td><strong>Supabase</strong></td><td>Database, anonymous authentication, file storage (pet photos), and server functions. This is where your app data lives.</td></tr>
   <tr><td><strong>Google (Gemini)</strong></td><td>Automated text recognition on label photos you submit, to read the ingredient list.</td></tr>
   <tr><td><strong>Anthropic (Claude)</strong></td><td>Backup text/ingredient parsing when the primary service is unavailable.</td></tr>
-  <tr><td><strong>RevenueCat</strong></td><td>Subscription status and receipt validation.</td></tr>
+  <tr><td><strong>RevenueCat</strong></td><td>Purchase and receipt validation; annual and Lifetime membership status; and the pseudonymous Kiba user identifier associated with its customer records.</td></tr>
   <tr><td><strong>Apple</strong></td><td>Payment processing and push notification delivery.</td></tr>
   <tr><td><strong>Expo</strong></td><td>Push notification delivery.</td></tr>
 </table>
