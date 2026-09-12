@@ -23,7 +23,7 @@
 <body>
 <main>
 <h1>Kiba — Privacy Policy</h1>
-<p class="updated">Last updated: September 7, 2026</p>
+<p class="updated">Last updated: September 12, 2026</p>
 
 <p>Kiba (“we”, “us”) is a pet food scanner app that scores pet food against your pet's profile. This policy explains what the app collects, why, and who it goes to.</p>
 
@@ -47,7 +47,7 @@
 <p>If you turn on notifications, we store a push token for your device so we can deliver recall alerts and reminders. You can turn notifications off at any time in the app or in iOS Settings.</p>
 
 <h3>Photos you take of labels</h3>
-<p>If you use the camera to add a product we don't have, the photo of the label is sent to our server and processed by an automated text-recognition service to read the ingredient list. See §4.</p>
+<p>If you use the camera to add a product we don't have, the photo of the label is sent to our server and processed by an automated text-recognition service to read ingredients and nutrition information. You can check and correct the extracted facts before saving. See §4.</p>
 
 <h3>Purchases</h3>
 <p>If you buy an annual or Lifetime membership, Apple processes your payment and RevenueCat validates the purchase and manages Premium access. Kiba does not receive your payment-card details.</p>
@@ -74,30 +74,31 @@
 <table>
   <tr><th>Provider</th><th>What it handles</th></tr>
   <tr><td><strong>Supabase</strong></td><td>Database, anonymous authentication, file storage (pet photos), and server functions. This is where your app data lives.</td></tr>
-  <tr><td><strong>Google (Gemini)</strong></td><td>Automated text recognition on label photos you submit, to read the ingredient list.</td></tr>
-  <tr><td><strong>Anthropic (Claude)</strong></td><td>Backup text/ingredient parsing when the primary service is unavailable.</td></tr>
+  <tr><td><strong>Google (Gemini)</strong></td><td>Automated text recognition on label photos you submit, to read ingredients and nutrition information.</td></tr>
+  <tr><td><strong>Anthropic (Claude)</strong></td><td>Backup label-photo text recognition and ingredient parsing when the primary service is unavailable.</td></tr>
   <tr><td><strong>RevenueCat</strong></td><td>Purchase and receipt validation; annual and Lifetime membership status; and the pseudonymous Kiba user identifier associated with its customer records.</td></tr>
   <tr><td><strong>Apple</strong></td><td>Payment processing and push notification delivery.</td></tr>
   <tr><td><strong>Expo</strong></td><td>Push notification delivery.</td></tr>
 </table>
-<p><strong>About label photos:</strong> a photo you submit for ingredient recognition is sent to the provider above to extract the text. Photograph the label, not people, pets, or anything else you would not want processed.</p>
+<p><strong>About label photos:</strong> a photo you submit for label recognition is sent to the provider above to extract the text. Photograph the label, not people, pets, or anything else you would not want processed.</p>
 
 <h2>5. What other people can see</h2>
 <p>Most of your data is private to you. These features are <strong>public by design</strong>, and you choose whether to use them:</p>
 <ul>
   <li><strong>Recipes</strong> you submit to the community section, including any photo you attach.</li>
-  <li><strong>Products you contribute</strong> to the catalog, once approved.</li>
+  <li><strong>Products you contribute</strong> to the catalog, including confirmed ingredient and nutrition facts. Contributions may be visible while pending review; a community contribution is not a verification by Kiba.</li>
   <li><strong>Votes</strong> you cast on products, which appear only as anonymous aggregate counts.</li>
   <li><strong>Points and level</strong>, if a leaderboard or community surface displays them.</li>
 </ul>
 <p>Your pets' names, photos, health information, pantry, and scan history are <strong>never</strong> shown to other users.</p>
 
 <h2>6. How long we keep it</h2>
+<p>For new-product scans, raw nutrition text stays private and is scheduled for deletion after 90 days. Confirmed product facts and limited submission records can remain with the catalog product to preserve its history and recognize repeated save requests. The raw transcript is not shown to other users.</p>
 <p>We keep your data while your installation remains active. You can delete individual items — pets, pantry items, bookmarks, journal entries, appointments — from within the app at any time, and deletion removes them from our database.</p>
 <p>To request deletion of everything associated with your installation, email <strong><a href="mailto:support@kibascan.com">support@kibascan.com</a></strong>. We will delete it within 30 days.</p>
 
 <h2>7. Security</h2>
-<p>Data is transmitted over encrypted connections (HTTPS) and stored with row-level access rules that restrict every record to the installation that created it. No system is perfectly secure, but your data is not readable by other users of the app.</p>
+<p>Data is transmitted over encrypted connections (HTTPS) and stored with access rules that restrict private app records to the installation that created them or the server processes that operate the feature. The community information described in §5 is public. No system is perfectly secure.</p>
 
 <h2>8. Children</h2>
 <p>Kiba is intended for adults who own pets. It is not directed at children under 13, and we do not knowingly collect information from them.</p>
