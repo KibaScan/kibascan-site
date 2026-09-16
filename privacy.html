@@ -23,15 +23,15 @@
 <body>
 <main>
 <h1>Kiba — Privacy Policy</h1>
-<p class="updated">Last updated: September 12, 2026</p>
+<p class="updated">Last updated: September 15, 2026</p>
 
 <p>Kiba (“we”, “us”) is a pet food scanner app that scores pet food against your pet's profile. This policy explains what the app collects, why, and who it goes to.</p>
 
-<p>The short version: <strong>we collect only what the app needs to work, we don't sell it, we don't use it for advertising, and we don't build profiles of you.</strong></p>
+<p>The short version: <strong>we use data to operate and improve Kiba. We don't sell it, use it for advertising, or build marketing profiles of you.</strong></p>
 
 <h2>1. You don't need an account</h2>
-<p>Kiba signs you in <strong>anonymously</strong>. We do not ask for — and do not collect — your name, email address, phone number, or a password. There is no login screen.</p>
-<p>That anonymous identity exists so that the data you create in the app belongs to you and is not readable by anyone else. It is tied to your app installation.</p>
+<p>Kiba signs you in <strong>anonymously</strong>. You do not need to provide your name, email address, phone number, or a password to start using the app. There is no login screen. If you choose to enter an owner display name or contact support, we receive the information described below.</p>
+<p>That anonymous identity links your records to your app installation. Access rules restrict private app records to that identity and the service processes that operate the features. Public contributions and image access are described in §5.</p>
 <p><strong>What this means for you:</strong> if you delete and reinstall the app, or switch devices, you may not be able to recover your data, because there is no account to sign back in to.</p>
 
 <h2>2. What we store</h2>
@@ -40,11 +40,15 @@
 <p>Pet name, species (dog or cat), breed, date of birth, weight, whether they are neutered, body condition score, and — if you choose to enter it — health conditions, allergens, medications, medical records, appointment reminders, daily health observations, and a pet photo.</p>
 <p>You choose whether to provide any of this. Health information is optional; it exists so the score can reflect your pet's needs.</p>
 
+<h3>Optional owner name and support information</h3>
+<p>If you enter an owner display name in Settings or while preparing a vet report, we save it with your anonymous app identity for features such as vet-report preparation. In-app issue reports may include your selected reason, written details, and the identifiers needed to review the report. If you contact support by email, we receive your email address and any information you include in your message.</p>
+
 <h3>Information created by using the app</h3>
 <p>Products you scan, bookmarks, your pantry items and feeding setup, food-transition plans, community votes, points earned, your notification preferences, and the search terms you type in the app.</p>
 
 <h3>Device information</h3>
-<p>If you turn on notifications, we store a push token for your device so we can deliver recall alerts and reminders. You can turn notifications off at any time in the app or in iOS Settings.</p>
+<p>If you turn on notifications, we store a push token and a randomly generated installation identifier so we can deliver recall alerts and reminders to the correct device. You can turn notifications off at any time in the app or in iOS Settings.</p>
+<p>Our service providers also process technical connection and operational information, such as IP addresses, client information, and request or authentication events, to run, secure, and troubleshoot the service.</p>
 
 <h3>Photos you take of labels</h3>
 <p>If you use the camera to add a product we don't have, the photo of the label is sent to our server and processed by an automated text-recognition service to read ingredients and nutrition information. You can check and correct the extracted facts before saving. See §4.</p>
@@ -56,10 +60,10 @@
 <p>This purchase association does not create a username, password or recoverable account for your pet data. Eligible App Store purchases can be restored using the same Apple account; restoring a membership does not recover other app data or establish cross-platform access.</p>
 
 <h3>What we do NOT collect</h3>
-<p>No contacts, no precise location, no advertising identifiers, no browsing history outside the app, no microphone audio, and no photos from your library other than ones you deliberately select for a pet photo or a label scan.</p>
+<p>No contacts, no precise location, no advertising identifiers, no browsing history outside the app, no microphone audio, and no photos from your library other than images you deliberately select for an app feature, such as a pet photo, a label scan, or a recipe submission.</p>
 
 <h2>3. Why we store it, and what we don't do with it</h2>
-<p>We store this information for one reason: <strong>to operate the app for you</strong> — to compute a score for your pet, keep your pantry and history, send the alerts you asked for, and provide and restore your Premium membership.</p>
+<p>We use this information <strong>to provide and improve Kiba</strong> — to compute a score for your pet, keep your pantry and history, prepare reports, respond to issue reports and support requests, send the alerts you asked for, and provide and restore your Premium membership. We also use search terms and related search events to understand search results and improve search quality, and review the membership measures described in §2 to operate the service.</p>
 <p>We do <strong>not</strong>:</p>
 <ul>
   <li>sell or rent your information to anyone;</li>
@@ -67,15 +71,15 @@
   <li>use it to build a marketing profile of you;</li>
   <li>use your pet's health information for any purpose other than producing your scores and the features you use.</li>
 </ul>
-<p>Data is stored because the app needs somewhere to keep it, not because we mine it.</p>
+<p>Search and membership analytics help us understand how those features work; they are not used to target advertising.</p>
 
 <h2>4. Who processes data on our behalf</h2>
-<p>We use a small number of service providers. They process data only to provide their service to us:</p>
+<p>We use the following service providers to operate Kiba:</p>
 <table>
   <tr><th>Provider</th><th>What it handles</th></tr>
   <tr><td><strong>Supabase</strong></td><td>Database, anonymous authentication, file storage (pet photos), and server functions. This is where your app data lives.</td></tr>
   <tr><td><strong>Google (Gemini)</strong></td><td>Automated text recognition on label photos you submit, to read ingredients and nutrition information.</td></tr>
-  <tr><td><strong>Anthropic (Claude)</strong></td><td>Backup label-photo text recognition and ingredient parsing when the primary service is unavailable.</td></tr>
+  <tr><td><strong>Anthropic (Claude)</strong></td><td>Label-photo text recognition and ingredient parsing, including fallback processing.</td></tr>
   <tr><td><strong>RevenueCat</strong></td><td>Purchase and receipt validation; annual and Lifetime membership status; and the pseudonymous Kiba user identifier associated with its customer records.</td></tr>
   <tr><td><strong>Apple</strong></td><td>Payment processing and push notification delivery.</td></tr>
   <tr><td><strong>Expo</strong></td><td>Push notification delivery.</td></tr>
@@ -90,11 +94,12 @@
   <li><strong>Votes</strong> you cast on products, which appear only as anonymous aggregate counts.</li>
   <li><strong>Points and level</strong>, if a leaderboard or community surface displays them.</li>
 </ul>
-<p>Your pets' names, photos, health information, pantry, and scan history are <strong>never</strong> shown to other users.</p>
+<p>Kiba does not display your pet profiles, health information, pantry, or scan history to other app users by default. If you choose to share a profile card or vet report, its recipients can see the information included in that shared item.</p>
+<p>Pet photos are served from public image URLs. Anyone with a direct image URL can view that photo.</p>
 
 <h2>6. How long we keep it</h2>
 <p>For new-product scans, raw nutrition text stays private and is scheduled for deletion after 90 days. Confirmed product facts and limited submission records can remain with the catalog product to preserve its history and recognize repeated save requests. The raw transcript is not shown to other users.</p>
-<p>We keep your data while your installation remains active. You can delete individual items — pets, pantry items, bookmarks, journal entries, appointments — from within the app at any time, and deletion removes them from our database.</p>
+<p>We keep your data while your installation remains active. You can remove individual items — pets, pantry items, bookmarks, journal entries, appointments — from within the app. Some features delete the underlying record; others, such as Pantry, keep a record marked inactive. Removing an item does not necessarily erase every related record.</p>
 <p>To request deletion of everything associated with your installation, email <strong><a href="mailto:support@kibascan.com">support@kibascan.com</a></strong>. We will delete it within 30 days.</p>
 
 <h2>7. Security</h2>
@@ -105,7 +110,7 @@
 
 <h2>9. Your rights</h2>
 <p>Depending on where you live, you may have the right to access, correct, delete, or export your information, and to object to certain processing.</p>
-<p>Because Kiba does not collect identifying information about you, we may not be able to locate your records from an email address alone — we may need identifying details from the app to act on a request. Contact <strong><a href="mailto:support@kibascan.com">support@kibascan.com</a></strong>.</p>
+<p>Because sign-in uses an anonymous app identifier rather than an email address, we may not be able to locate your app records from an email address alone. We may need identifying details from the app to act on a request. Contact <strong><a href="mailto:support@kibascan.com">support@kibascan.com</a></strong>.</p>
 <p>We do not sell personal information, and we have not done so in the preceding 12 months.</p>
 
 <h2>10. This is not veterinary advice</h2>
