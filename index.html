@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-store="pending">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09292d">
+  <meta name="description" content="Scan dog and cat food, understand ingredients, explore food matches based on your pet’s profile, and organize everyday care with Kiba.">
+  <meta property="og:title" content="Kiba — Understand their food.">
+  <meta property="og:description" content="Pet-food scanning, ingredient explanations, and everyday care tools for dogs and cats.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kibascan.com/">
+  <link rel="canonical" href="https://kibascan.com/">
+  <meta property="og:image" content="https://kibascan.com/assets/kiba-garden.png">
+  <meta property="og:image:alt" content="A golden retriever and a tuxedo cat together in a sunlit painted garden.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Kiba — Pet Food Scanner for Dogs &amp; Cats</title>
+  <link rel="icon" href="assets/kiba-mark-96.png">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/garden-768.avif 768w, assets/garden-1536.avif 1536w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/bodoni-moda-opsz.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=49328fcb6e">
+  <script src="script.js?v=d8b8612100" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <a class="brand" href="#home" aria-label="Kiba home"><img src="assets/kiba-mark-96.webp" width="45" height="45" alt=""><span>Kiba</span></a>
+      <a class="nav-link" href="#our-story">Our story</a>
+      <a class="nav-link nav-cta store-pending" href="#everyday-care">Explore Kiba</a>
+      <a class="nav-link nav-cta store-live" href="https://apps.apple.com/app/id6760624055">Get the app</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <picture>
+        <source type="image/avif" srcset="assets/garden-768.avif 768w, assets/garden-1536.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="assets/garden-768.webp 768w, assets/garden-1536.webp 1536w" sizes="100vw">
+        <img class="hero-art" src="assets/garden-1536.jpg" width="1536" height="1024" alt="A golden retriever and a tuxedo cat resting in a sunlit garden beneath a painted sky." fetchpriority="high">
+      </picture>
+      <canvas class="hero-art garden-motion" width="1536" height="1024" aria-hidden="true"></canvas>
+      <div class="hero-shade"></div>
+      <img class="ambient-clouds" id="hero-atmosphere" src="assets/ambient-clouds.webp" width="1536" height="1024" alt="" aria-hidden="true">
+      <div class="hero-copy">
+        <h1 id="hero-title">Understand their food.</h1>
+        <p class="hero-line">Scan pet food. See their match.</p>
+        <div class="hero-actions">
+          <a class="button store-pending" href="#how-it-works">See how it works</a>
+          <a class="badge-link store-live" href="https://apps.apple.com/app/id6760624055"><img class="app-store-badge" src="assets/app-store-badge.svg" width="162" height="54" alt="Download on the App Store" loading="lazy"></a>
+          <a class="text-link store-live" href="#how-it-works">See how it works</a>
+        </div>
+      </div>
+      <figure class="hero-device">
+        <div class="device">
+          <picture>
+            <source type="image/avif" srcset="assets/screens/01-luna-result-440.avif 440w, assets/screens/01-luna-result-880.avif 880w" sizes="(max-width: 820px) 200px, 300px">
+            <source type="image/webp" srcset="assets/screens/01-luna-result-440.webp 440w, assets/screens/01-luna-result-880.webp 880w" sizes="(max-width: 820px) 200px, 300px">
+            <img src="assets/screens/01-luna-result-440.webp" width="440" height="956" alt="Kiba result screen: 85% match for Luna for Demo Kitchen Chicken &amp; Rice, a sample product" fetchpriority="high">
+          </picture>
+        </div>
+        <figcaption class="sample-note">Sample products and demo profiles</figcaption>
+      </figure>
+      <button class="motion-control" type="button" aria-controls="main" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12M13 4v12"/></svg><span class="sr-only">Pause motion</span></button>
+      <div class="hero-transition" aria-hidden="true"></div>
+    </section>
+
+    <section class="label" id="how-it-works" aria-labelledby="label-title">
+      <div class="label-head wrap">
+        <h2 id="label-title">Every label, read with your pet in mind.</h2>
+      </div>
+      <div class="label-track">
+        <div class="label-stage">
+          <div class="label-grid wrap">
+            <p class="label-product">Demo Kitchen Chicken &amp; Rice (sample product)</p>
+            <button class="label-control" type="button" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12M13 4v12"/></svg><span class="label-control-text">Pause</span><span class="sr-only"> ingredients</span><span class="label-control-bar" aria-hidden="true"><span></span></span></button>
+            <p class="label-list"><span class="label-lead">Ingredients:</span> <span class="ing"><span class="ing-name">Chicken</span>,</span> <span class="ing"><span class="ing-name">chicken meal</span>,</span> <span class="ing"><span class="ing-name">brown rice</span>,</span> <span class="ing"><span class="ing-name">chicken fat</span>,</span> <span class="ing"><span class="ing-name">salmon oil</span>,</span> <span class="ing"><span class="ing-name">flaxseed</span>,</span> <span class="ing"><span class="ing-name">taurine</span>,</span> <span class="ing"><span class="ing-name">mixed tocopherols</span>.</span></p>
+            <ol class="label-notes">
+              <li class="label-note" id="note-0"><h3>Chicken</h3><p class="rating rating-good">Good for cats</p><p>A named whole meat and a source of animal protein.</p></li>
+              <li class="label-note" id="note-1"><h3>Chicken meal</h3><p class="rating rating-good">Good for cats</p><p>Chicken with the water removed, about 65% protein. It can supply more protein per gram than fresh chicken, even when fresh chicken is listed first.</p></li>
+              <li class="label-note" id="note-2"><h3>Brown rice</h3><p class="rating rating-neutral">Neutral for cats</p><p>A highly digestible grain. Good for dogs. For cats, it adds carbohydrate they don’t require.</p></li>
+              <li class="label-note" id="note-3"><h3>Chicken fat</h3><p class="rating rating-good">Good for cats</p><p>A named fat. Naming the species makes it traceable, unlike generic “animal fat.”</p></li>
+              <li class="label-note" id="note-4"><h3>Salmon oil</h3><p class="rating rating-good">Good for cats</p><p>Fat from a named marine source, which can provide the omega-3s EPA and DHA.</p></li>
+              <li class="label-note" id="note-5"><h3>Flaxseed</h3><p class="rating rating-neutral">Neutral for cats</p><p>Plant omega-3. Dogs convert some of it to EPA. Cats can’t, so for Luna it’s neutral.</p></li>
+              <li class="label-note" id="note-6"><h3>Taurine</h3><p class="rating rating-good">Good for cats</p><p>Cats can’t make enough taurine on their own, so they need it from their food.</p></li>
+              <li class="label-note" id="note-7"><h3>Mixed tocopherols</h3><p class="rating rating-good">Good for cats</p><p>A natural preservative system that keeps the fat from going rancid.</p></li>
+            </ol>
+            <div class="label-result">
+              <div class="label-result-inner">
+                <p class="label-match">85% match for Luna</p>
+                <p class="label-context">Ingredients are one part. Kiba also weighs the nutrition facts and the label’s AAFCO statement against Luna’s profile. A match is guidance based on available information, not a guarantee.</p>
+                <p class="sample-note">Sample products and demo profiles</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figure class="feature label-photo wrap">
+        <div class="device">
+          <picture>
+            <source type="image/avif" srcset="assets/screens/12-add-by-photo-440.avif 440w, assets/screens/12-add-by-photo-880.avif 880w" sizes="(max-width: 820px) 52vw, 250px">
+            <source type="image/webp" srcset="assets/screens/12-add-by-photo-440.webp 440w, assets/screens/12-add-by-photo-880.webp 880w" sizes="(max-width: 820px) 52vw, 250px">
+            <img src="assets/screens/12-add-by-photo-440.webp" width="440" height="956" alt="Kiba Add Product screen showing the ingredient list read from a photo of a sample food label, with an Analyze Ingredients button" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <figcaption><h3>Add a food by photo.</h3><p>Scanned a food that isn’t in Kiba yet? Photograph its ingredient list. Kiba reads it for you to check, then scores it for your pet.</p><p class="sample-note">Sample products and demo profiles</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="everyday" id="everyday-care" aria-labelledby="everyday-title">
+      <div class="everyday-grid wrap">
+        <header class="everyday-head">
+          <h2 id="everyday-title">From their food to their everyday.</h2>
+          <p>One app for dogs and cats, from the first scan to everyday records.</p>
+        </header>
+        <figure class="feature feature-top-picks">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/03-max-top-picks-440.avif 440w, assets/screens/03-max-top-picks-880.avif 880w" sizes="(max-width: 820px) 52vw, 280px">
+              <source type="image/webp" srcset="assets/screens/03-max-top-picks-440.webp 440w, assets/screens/03-max-top-picks-880.webp 880w" sizes="(max-width: 820px) 52vw, 280px">
+              <img src="assets/screens/03-max-top-picks-440.webp" width="440" height="956" alt="Kiba Top Picks screen for Max, ranking sample Demo Kitchen foods with 90% and 89% matches" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Explore your pet’s Top Picks.</h3><p>See which complete-data foods best match your pet’s profile.</p><p class="tag">Membership</p></figcaption>
+        </figure>
+        <figure class="feature feature-pantry">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/04-luna-feeding-440.avif 440w, assets/screens/04-luna-feeding-880.avif 880w" sizes="(max-width: 820px) 52vw, 230px">
+              <source type="image/webp" srcset="assets/screens/04-luna-feeding-440.webp 440w, assets/screens/04-luna-feeding-880.webp 880w" sizes="(max-width: 820px) 52vw, 230px">
+              <img src="assets/screens/04-luna-feeding-440.webp" width="440" height="956" alt="Kiba pantry screen for Luna’s sample food, showing her portions and about 20 days left in the bag" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Keep feeding organized.</h3><p>Keep foods in your pantry, review portions, and see how much stock remains.</p></figcaption>
+        </figure>
+        <figure class="feature feature-switch">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/05-max-safe-switch-440.avif 440w, assets/screens/05-max-safe-switch-880.avif 880w" sizes="(max-width: 820px) 52vw, 230px">
+              <source type="image/webp" srcset="assets/screens/05-max-safe-switch-440.webp 440w, assets/screens/05-max-safe-switch-880.webp 880w" sizes="(max-width: 820px) 52vw, 230px">
+              <img src="assets/screens/05-max-safe-switch-440.webp" width="440" height="956" alt="Kiba Safe Switch screen for Max on day 3 of 7, mixing half the old food and half the new" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Switch food step by step.</h3><p>A day-by-day plan for moving to a new food.</p><p class="tag">Membership</p></figcaption>
+        </figure>
+        <figure class="feature feature-journal">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/06-luna-journal-440.avif 440w, assets/screens/06-luna-journal-880.avif 880w" sizes="(max-width: 820px) 52vw, 200px">
+              <source type="image/webp" srcset="assets/screens/06-luna-journal-440.webp 440w, assets/screens/06-luna-journal-880.webp 880w" sizes="(max-width: 820px) 52vw, 200px">
+              <img src="assets/screens/06-luna-journal-440.webp" width="440" height="956" alt="Kiba Health Journal screen for Luna, with her recent daily check-ins" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Keep a journal of their day.</h3><p>Record check-ins and observations in the free Health Journal.</p><p class="tag">Free</p></figcaption>
+        </figure>
+        <figure class="feature feature-hub">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/08-max-pet-hub-440.avif 440w, assets/screens/08-max-pet-hub-880.avif 880w" sizes="(max-width: 820px) 52vw, 280px">
+              <source type="image/webp" srcset="assets/screens/08-max-pet-hub-440.webp 440w, assets/screens/08-max-pet-hub-880.webp 880w" sizes="(max-width: 820px) 52vw, 280px">
+              <img src="assets/screens/08-max-pet-hub-440.webp" width="440" height="956" alt="Kiba Pet Hub screen showing Max’s profile, details and daily calories" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Their care. All together.</h3><p>Profiles, medications, records, and appointments in one place.</p></figcaption>
+        </figure>
+        <div class="everyday-notes">
+          <p>FDA pet-food recall information and alerts are free for everyone.</p>
+          <p>Some features require membership. Kiba does not diagnose or treat medical conditions.</p>
+          <p>Food matches reflect the selected dog or cat’s profile and available food information. They are guidance, not a veterinary prescription or a guarantee of suitability.</p>
+          <p class="sample-note">Sample products and demo profiles</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="know" id="good-to-know" aria-labelledby="know-title">
+      <div class="know-grid wrap">
+        <header class="know-head">
+          <h2 id="know-title">For the questions between meals.</h2>
+          <p>Free references for dogs and cats, right in the app.</p>
+        </header>
+        <figure class="feature know-toxic">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/09-dog-toxic-database-440.avif 440w, assets/screens/09-dog-toxic-database-880.avif 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <source type="image/webp" srcset="assets/screens/09-dog-toxic-database-440.webp 440w, assets/screens/09-dog-toxic-database-880.webp 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <img src="assets/screens/09-dog-toxic-database-440.webp" width="440" height="956" alt="Kiba Toxic Database for dogs, listing foods to watch for such as alcohol, baking chocolate and caffeine" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Check what’s toxic.</h3><p>Foods, plants, and medications to watch for, by species.</p><p class="tag">Free</p></figcaption>
+        </figure>
+        <figure class="feature know-entry">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/10-cat-toxic-lily-440.avif 440w, assets/screens/10-cat-toxic-lily-880.avif 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <source type="image/webp" srcset="assets/screens/10-cat-toxic-lily-440.webp 440w, assets/screens/10-cat-toxic-lily-880.webp 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <img src="assets/screens/10-cat-toxic-lily-440.webp" width="440" height="956" alt="Kiba Toxic Database entry for Asiatic lily in cats, with symptoms, what to know and references" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Every entry, with its sources.</h3><p>Symptoms, what to know, and the references behind it.</p></figcaption>
+        </figure>
+        <figure class="feature know-breed">
+          <div class="device">
+            <picture>
+              <source type="image/avif" srcset="assets/screens/11-golden-retriever-guide-440.avif 440w, assets/screens/11-golden-retriever-guide-880.avif 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <source type="image/webp" srcset="assets/screens/11-golden-retriever-guide-440.webp 440w, assets/screens/11-golden-retriever-guide-880.webp 880w" sizes="(max-width: 820px) 52vw, 250px">
+              <img src="assets/screens/11-golden-retriever-guide-440.webp" width="440" height="956" alt="Kiba Breed Guide page for the Golden Retriever, with size, weight, lifespan and coat" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><h3>Get to know the breed.</h3><p>Size, weight, coat, and everyday tendencies for dozens of dog and cat breeds.</p><p class="tag">Free</p></figcaption>
+        </figure>
+        <div class="know-notes">
+          <p>Educational reference only. If your pet may have eaten something toxic, contact your veterinarian or an animal poison control line right away.</p>
+          <p class="sample-note">Sample products and demo profiles</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="our-story" aria-labelledby="story-title">
+      <div class="story-grid wrap">
+        <h2 id="story-title">For the ones<br>who trust us.</h2>
+        <div class="story-copy">
+          <p>Choosing their food can come with a lot of questions. Kiba began with that same curiosity: what’s in the bowl, and what does it mean for the pet beside us?</p>
+          <p>We’re making food labels easier to understand, so fellow pet owners can approach everyday choices with a little more clarity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="questions" id="questions" aria-labelledby="questions-title">
+      <div class="questions-grid wrap">
+        <h2 id="questions-title">A few good<br>questions.</h2>
+        <div class="faq-list">
+          <details><summary>Is Kiba for dogs, cats, or both?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-7-7v14"/></svg></summary><p>Both. Each pet has their own profile, and Kiba uses their species and profile information to put food results in context.</p></details>
+          <details><summary>What does a food match mean?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-7-7v14"/></svg></summary><p>A match reflects Kiba’s assessment of the available food information in the context of your pet’s profile. It is a way to explore a food, not a guarantee of a health outcome.</p></details>
+          <details><summary>Does Kiba replace advice from my vet?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-7-7v14"/></svg></summary><p>No. Kiba helps you understand food labels and keep useful pet records. Your veterinarian is the right person for diagnosis, treatment, or a prescribed diet.</p></details>
+          <details><summary>Do brands influence the food score?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-7-7v14"/></svg></summary><p>Kiba’s scoring is brand-blind. Affiliate links do not affect a food’s score.</p></details>
+          <details><summary>What requires membership?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14m-7-7v14"/></svg></summary><p>The Health Journal is free. The dietary and health-history PDF report for veterinary visits requires membership, as do some other features. Check membership details in the app for the current options.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <picture>
+        <source type="image/avif" srcset="assets/garden-768.avif 768w, assets/garden-1536.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="assets/garden-768.webp 768w, assets/garden-1536.webp 1536w" sizes="100vw">
+        <img class="closing-art" src="assets/garden-1536.jpg" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div class="closing-copy wrap">
+        <h2 id="closing-title">Their bowl.<br>Your curiosity.<br>A little help from Kiba.</h2>
+        <a class="badge-link store-live" href="https://apps.apple.com/app/id6760624055"><img class="app-store-badge" src="assets/app-store-badge.svg" width="162" height="54" alt="Download on the App Store" loading="lazy"></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap">
+    <div class="footer-intro"><a class="brand" href="#home" aria-label="Kiba home"><img src="assets/kiba-mark-96.webp" width="40" height="40" alt=""><span>Kiba</span></a><p>Made for the pets we call family.</p></div>
+    <a class="footer-top" href="#home">Back to the garden</a>
+    <nav class="footer-links" aria-label="Legal and support">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/support">Support</a>
+    </nav>
+  </footer>
+</body>
+</html>
