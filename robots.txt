@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kibascan.com/sitemap.xml

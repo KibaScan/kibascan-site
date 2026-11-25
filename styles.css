@@ -1,0 +1,276 @@
+/* ---------- Fonts: self-hosted Latin subsets (OFL licenses in assets/) ---------- */
+@font-face{font-family:'Bodoni Moda';src:url('assets/fonts/bodoni-moda-opsz.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Manrope;src:url('assets/fonts/manrope-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Manrope;src:url('assets/fonts/manrope-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+/* ---------- Tokens ---------- */
+:root{
+  --teal:#09292d;--deep:#071f23;--ink:#f5f4e9;--muted:#c0d0ca;--cyan:#43e4e8;--line:#325052;
+  /* Upcoming ingredients: 3.8:1 on --deep, AA for large text. */
+  --dim:#6b7a77;--good:#4ade80;--neutral:#6b7280;
+  /* Small dimmed text needs 4.5:1: this is 4.8:1 on --deep. */
+  --dim-small:#7f8a87;
+  --display:'Bodoni Moda',Georgia,serif;--text:Manrope,Arial,sans-serif;
+  --wrap:min(1240px,calc(100% - 112px));--gutter:32px;
+  --phone-w:clamp(220px,19vw,300px);
+  color-scheme:dark;font-family:var(--text);background:var(--teal);color:var(--ink);
+  scroll-behavior:smooth;scrollbar-gutter:stable;font-optical-sizing:auto
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+body{margin:0;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em}
+button{font:inherit;cursor:pointer}
+button,a{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--cyan);color:var(--deep)}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:6px}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;text-wrap:balance}
+h2{font-size:clamp(36px,4.4vw,60px);line-height:1.08;letter-spacing:-.015em}
+/* Above ~60px, optical size 96 hairlines vanish on 1x screens; 48 keeps them. */
+h1,.label-match,.closing h2{font-variation-settings:'opsz' 48}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip-link{position:absolute;top:12px;left:20px;z-index:20;background:var(--cyan);color:var(--deep);padding:14px;clip-path:inset(100%);white-space:nowrap}
+.skip-link:focus{clip-path:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sample-note{font-size:13px;line-height:1.5;color:var(--muted)}
+
+/* One attribute decides which App Store state the page shows. */
+[data-store="pending"] .store-live,[data-store="live"] .store-pending{display:none!important}
+
+/* ---------- Header ---------- */
+.site-header{position:absolute;z-index:10;top:26px;left:0;width:100%;padding:0 24px}
+.navigation{display:flex;align-items:center;justify-content:center;gap:36px;max-width:680px;margin:auto}
+.nav-link{text-decoration:none;font-size:14px;min-height:44px;display:flex;align-items:center;white-space:nowrap}
+.nav-link:hover{text-decoration:underline}
+.nav-cta{color:var(--cyan)}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:29px;font-weight:700;color:var(--cyan);letter-spacing:-.04em;white-space:nowrap}
+.brand img{border-radius:11px;width:45px;height:45px}
+.brand:hover{color:#fff}
+
+/* ---------- Buttons ---------- */
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 32px;background:var(--cyan);color:#06272f;border-radius:40px;text-decoration:none;font-size:15px;font-weight:700;transition:background .2s}
+.button:hover{background:#86f5f3}
+.badge-link{display:inline-flex;border-radius:10px}
+.app-store-badge{width:auto;height:54px}
+.text-link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:700;color:var(--ink)}
+.text-link:hover{color:var(--cyan)}
+
+/* ---------- Hero: the garden, with the real result screen standing between the pets ---------- */
+.hero{position:relative;display:flex;flex-direction:column;align-items:center;min-height:clamp(800px,100svh,1150px);isolation:isolate;overflow:hidden;background:#14556a}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-3}
+.garden-motion{visibility:hidden;pointer-events:none}
+.hero[data-garden-ready] .garden-motion{visibility:visible}
+.hero[data-garden-ready] img.hero-art{opacity:0}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(0,30,39,.3) 0%,rgba(0,30,39,.12) 40%,transparent 70%)}
+.ambient-clouds{position:absolute;z-index:-1;pointer-events:none;left:-8%;top:-7%;width:116%;height:116%;max-width:none;object-fit:cover;object-position:center 55%;opacity:.38;mask-image:linear-gradient(#000 0%,#000 25%,transparent 62%);animation:garden-cloud-drift 16s linear infinite alternate;animation-play-state:paused}
+@keyframes garden-cloud-drift{from{transform:translate(-36px,-6px)}to{transform:translate(36px,10px)}}
+.hero-copy{position:relative;text-align:center;padding:clamp(128px,17vh,190px) 24px 0;margin:0 auto 44px;max-width:1000px}
+h1{font-size:clamp(56px,min(7.5vw,12svh),104px);line-height:1;letter-spacing:-.02em}
+.hero-line{margin-top:20px;font-size:clamp(18px,1.55vw,22px);line-height:1.5}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 26px;margin-top:28px}
+/* In flow below the copy: the hero grows rather than letting the phone cover the actions. */
+.hero-device{position:relative;z-index:1;flex:none;width:var(--phone-w);margin:auto auto calc(var(--phone-w) * -.7)}
+.hero-device .sample-note{position:absolute;left:calc(100% + 18px);bottom:calc(var(--phone-w) * .7 + 26px);width:max-content;padding:6px 11px;border-radius:8px;background:rgba(7,31,35,.82);color:var(--ink);font-weight:700;font-size:12px}
+.hero-transition{position:absolute;bottom:-1px;height:100px;width:110%;left:-5%;background:var(--deep);border-radius:50% 50% 0 0 / 55% 55% 0 0;transform:translateY(60%)}
+.motion-control{position:absolute;z-index:2;left:24px;bottom:44px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #829e97;border-radius:50%;color:#fff;background:#09292de8}
+.motion-control[hidden]{display:none}
+.motion-control svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* The one phone frame used for every real app screen. App pixels are only scaled. */
+.device{padding:7px;border-radius:34px;background:#0b0e0f;box-shadow:0 30px 70px rgba(2,14,16,.5),0 0 0 1px rgba(255,255,255,.08)}
+.device img{width:100%;border-radius:27px}
+
+/* ---------- Read the label ---------- */
+.label{background:var(--deep);padding-top:clamp(72px,6vw,96px)}
+.label-head h2{max-width:22ch}
+.label-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);padding:clamp(32px,3.5vw,48px) 0 clamp(88px,9vw,128px)}
+.label-product{grid-column:1/-1;font-size:15px;color:var(--muted)}
+.label-list{grid-column:1/-1;margin-top:14px;font-family:var(--display);font-size:clamp(30px,4.6vw,64px);line-height:1.14;letter-spacing:-.01em;color:var(--ink)}
+/* A run-in lead, the way the list begins on a real bag. */
+.label-lead{margin-right:.3em;font-family:var(--text);font-weight:700;font-size:.34em;letter-spacing:.01em}
+.label-notes{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 64px;margin:56px 0 0;padding:0;list-style:none}
+.label-note h3{font-size:clamp(24px,2.2vw,30px);line-height:1.15}
+.rating{display:flex;align-items:center;gap:9px;margin:10px 0 8px;font-size:14px;font-weight:700;color:var(--ink)}
+.rating::before{content:'';flex:none;width:9px;height:9px;border-radius:50%;background:var(--neutral)}
+.rating-good::before{background:var(--good)}
+.label-note p:last-child{max-width:40ch;font-size:17px;line-height:1.6;color:var(--muted)}
+.label-result{grid-column:1/-1;margin-top:64px}
+.label-result-inner{padding-top:40px;border-top:1px solid var(--line)}
+.label-match{font-family:var(--display);font-size:clamp(48px,7vw,112px);line-height:1;letter-spacing:-.02em}
+.label-context{max-width:58ch;margin-top:20px;color:var(--muted)}
+.label-result .sample-note{margin-top:14px}
+
+/* Enhanced: while the section is on screen the ingredients take turns (times in ms). */
+.label-track{--label-step:3500;--label-result:6000;--label-per-word:250}
+.label-control{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px 8px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font-size:14px;font-weight:700}
+.label-control[hidden]{display:none}
+.label-control:hover{border-color:var(--cyan)}
+.label-control svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6}
+.label-control-bar{width:44px;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
+.label-control-bar span{display:block;height:100%;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+@media screen{
+  .label-enhanced .label-stage{position:relative}
+  .label-enhanced .label-grid{align-items:start}
+  .label-enhanced .label-product{grid-column:1/9;grid-row:1;align-self:center}
+  .label-enhanced .label-control{grid-column:9/13;grid-row:1;justify-self:start}
+  .label-enhanced .label-list{grid-column:1/9;grid-row:2}
+  .label-enhanced .ing{color:var(--dim);cursor:pointer;border-radius:4px;transition:color .25s}
+  .label-enhanced .ing:hover{color:var(--muted)}
+  .label-enhanced .ing[data-state=read]{color:var(--ink)}
+  .label-enhanced .ing[data-state=active]{color:var(--cyan)}
+  .label-enhanced .ing[data-state=active] .ing-name{text-decoration:underline;text-decoration-thickness:.05em;text-underline-offset:.16em}
+  .label-enhanced .ing:focus-visible{outline-offset:2px}
+  .label-enhanced .is-result .ing{color:var(--dim)}
+  .label-enhanced .is-result .label-lead{color:var(--dim-small)}
+  .label-enhanced .label-notes{grid-column:9/13;grid-row:2;display:grid;grid-template-columns:none;gap:0;margin:14px 0 0;transform:translateY(var(--note-y,0px));transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .label-enhanced .label-note{grid-area:1/1;opacity:0;transform:translateY(8px);transition:opacity .22s,transform .22s}
+  .label-enhanced .label-note.is-active{opacity:1;transform:none}
+  /* The result's space is always reserved, so nothing below it moves. */
+  .label-enhanced .label-result{grid-column:1/9;grid-row:3;margin-top:0;opacity:0;transform:translateY(14px);transition:opacity .3s,transform .3s}
+  .label-enhanced .label-result-inner{margin-top:28px;padding-top:24px}
+  .label-enhanced .is-result .label-result{opacity:1;transform:none}
+  .label-enhanced .label-match{font-size:clamp(44px,6.4vw,104px)}
+}
+
+/* ---------- Everyday: a gallery wall of real screens ---------- */
+.everyday{padding:clamp(110px,12vw,170px) 0 clamp(96px,10vw,150px)}
+.everyday-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:start}
+.everyday-head{grid-column:1/8;grid-row:1;margin-bottom:clamp(56px,6vw,96px)}
+.everyday-head p{max-width:44ch;margin-top:18px;color:var(--muted)}
+.feature{margin:0}
+.feature .device{width:var(--w);max-width:100%}
+.feature figcaption{max-width:30ch;margin-top:24px}
+.feature h3{font-size:clamp(24px,2.3vw,32px);line-height:1.12}
+.feature figcaption p{margin-top:8px;font-size:17px;line-height:1.55;color:var(--muted)}
+.feature figcaption .tag{display:inline-block;margin-top:12px;padding:2px 11px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink)}
+.feature-top-picks{--w:280px;grid-column:1/5;grid-row:2}
+.feature-pantry{--w:230px;grid-column:6/9;grid-row:2;margin-top:clamp(96px,10vw,160px)}
+.feature-switch{--w:230px;grid-column:10/13;grid-row:2;margin-top:clamp(28px,3vw,48px)}
+.feature-journal{--w:200px;grid-column:2/5;grid-row:3;margin-top:clamp(64px,7vw,110px)}
+.feature-hub{--w:280px;grid-column:7/11;grid-row:3;margin-top:clamp(24px,3vw,44px)}
+.everyday-notes{grid-column:1/8;grid-row:4;display:grid;gap:10px;margin-top:clamp(72px,8vw,120px);padding-top:28px;border-top:1px solid var(--line);font-size:15px;line-height:1.6;color:var(--ink)}
+
+/* ---------- Add by photo: follows the label story (after .feature so its margin wins) ---------- */
+.label-photo{--w:250px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:center;margin:0 auto;padding:0 0 clamp(96px,10vw,150px)}
+.label-photo figcaption{grid-column:1/8;grid-row:1;max-width:34ch;margin-top:0}
+.label-photo h3{font-size:clamp(30px,3.2vw,44px)}
+.label-photo figcaption p{margin-top:14px}
+.label-photo figcaption .sample-note{margin-top:18px;font-size:13px;line-height:1.5}
+.label-photo .device{grid-column:9/13;grid-row:1}
+
+/* ---------- Good to know: free references ---------- */
+.know{padding:clamp(104px,11vw,150px) 0;background:var(--deep)}
+.know-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:start}
+.know-head{grid-column:1/8;grid-row:1;margin-bottom:clamp(56px,6vw,88px)}
+.know-head p{max-width:44ch;margin-top:18px;color:var(--muted)}
+.know-toxic{--w:250px;grid-column:1/5;grid-row:2}
+.know-entry{--w:250px;grid-column:5/9;grid-row:2;margin-top:clamp(72px,8vw,120px)}
+.know-breed{--w:250px;grid-column:9/13;grid-row:2;margin-top:clamp(24px,3vw,44px)}
+.know-notes{grid-column:1/8;grid-row:3;display:grid;gap:10px;margin-top:clamp(64px,7vw,104px);padding-top:28px;border-top:1px solid var(--line);font-size:15px;line-height:1.6}
+
+/* ---------- Our story + questions ---------- */
+.story,.questions{padding:clamp(96px,10vw,150px) 0;border-top:1px solid var(--line)}
+.story-grid,.questions-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:start}
+.story h2{grid-column:1/6}
+.story-copy{grid-column:7/13;display:grid;gap:24px}
+.story-copy p{max-width:52ch;font-size:19px;line-height:1.75;color:var(--muted)}
+.questions h2{grid-column:1/5}
+.faq-list{grid-column:6/13}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list details:first-child{border-top:1px solid var(--line)}
+summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:80px;padding:22px 0;cursor:pointer;list-style:none;font-size:17px;line-height:1.5}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--cyan)}
+summary svg{flex:none;width:18px;height:18px;stroke:var(--cyan);stroke-width:1.4;fill:none;transition:transform .2s}
+details[open] summary svg{transform:rotate(45deg)}
+details p{max-width:60ch;padding:0 38px 28px 0;font-size:16px;line-height:1.8;color:var(--muted)}
+
+/* ---------- Closing plate ---------- */
+.closing{position:relative;isolation:isolate;overflow:hidden;padding:clamp(120px,14vw,200px) 0;text-align:center;background:var(--deep)}
+.closing-art{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 72%}
+.closing::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(7,31,35,.8),rgba(7,31,35,.9))}
+.closing h2{font-size:clamp(40px,5vw,72px);line-height:1.08}
+.closing .badge-link{margin:40px auto 0;width:max-content}
+
+/* ---------- Footer ---------- */
+.site-footer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px 28px;padding:40px 0;font-size:13px;color:var(--muted)}
+.site-footer .brand{font-size:24px}
+.site-footer .brand img{width:40px;height:40px}
+.footer-intro{display:flex;align-items:center;gap:28px}
+.footer-intro p{line-height:1.7}
+.footer-top,.footer-links a{display:inline-flex;align-items:center;min-height:44px}
+.footer-top:hover,.footer-links a:hover{color:var(--cyan)}
+.footer-links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0 28px}
+
+/* ---------- Wide screens ---------- */
+@media(min-width:1700px){.hero-copy{padding-top:20vh}.hero{min-height:clamp(920px,100svh,1150px)}}
+
+/* Tall tablet-shaped windows keep the whole painting so both pets stay in view. */
+@media(min-width:821px) and (max-width:1200px),(min-width:821px) and (max-aspect-ratio:3/2){
+  .hero{min-height:1000px}
+  .hero-art{top:auto;bottom:0;height:auto;object-fit:contain;object-position:bottom;mask-image:linear-gradient(to bottom,transparent 0%,#000 28%)}
+  .hero-shade{background:linear-gradient(180deg,#123f50 0%,#14556a 50%,transparent 85%)}
+}
+@media(max-width:1000px) and (min-width:821px){.hero-art{object-position:center bottom}.hero-copy{padding-top:170px}}
+
+/* ---------- Phones and small tablets ---------- */
+@media(max-width:820px){
+  :root{--wrap:calc(100% - 44px);--gutter:20px;--phone-w:clamp(128px,34vw,200px)}
+  body{font-size:17px}
+  .site-header{top:17px;padding:0 20px}
+  .navigation{gap:20px;flex-wrap:wrap}
+  .navigation .brand{order:-1;margin-right:auto;font-size:25px}
+  .navigation .brand img{width:38px;height:38px}
+  .nav-link{font-size:12px}
+  .navigation .nav-cta{display:none}
+  .hero{min-height:0}
+  .hero-art{top:auto;bottom:0;height:auto;object-fit:contain;object-position:bottom;mask-image:linear-gradient(to bottom,transparent 0%,#000 28%)}
+  .hero-shade{background:linear-gradient(180deg,#123f50 0%,#14556a 50%,transparent 85%)}
+  .ambient-clouds{display:none}
+  .hero-copy{padding:128px 20px 0;margin-bottom:64px;max-width:520px}
+  h1{font-size:clamp(46px,12.4vw,72px)}
+  .hero-line{font-size:16px}
+  .button{min-height:52px;padding:15px 26px;font-size:14px}
+  .hero-device{margin-bottom:calc(var(--phone-w) * -.72)}
+  .hero-device .sample-note{left:50%;bottom:calc(100% + 12px);transform:translateX(-50%)}
+  .hero-transition{height:50px}
+  .motion-control{left:15px;bottom:24px}
+  .label-grid{column-gap:0}
+  .label-notes{grid-template-columns:1fr;gap:32px;margin-top:40px}
+  .label-result{margin-top:48px;padding-top:32px}
+  .everyday-grid,.know-grid{display:flex;flex-direction:column;align-items:stretch}
+  .everyday-head,.know-head{margin-bottom:48px}
+  .feature{--w:52vw;width:100%;margin:0 0 64px}
+  .feature:nth-of-type(even) .device,.feature:nth-of-type(even) figcaption{margin-left:auto}
+  .feature figcaption{max-width:min(30ch,78vw)}
+  .label-photo{display:flex;flex-direction:column;align-items:flex-start;width:var(--wrap);margin:0 auto;padding:0 0 88px}
+  .label-photo figcaption{margin-top:24px}
+  .everyday-notes,.know-notes{margin-top:8px}
+  .story-grid,.questions-grid{display:block}
+  .story-copy{margin-top:28px}
+  .story-copy p{font-size:17px}
+  .faq-list{margin-top:34px}
+  summary{font-size:15px;min-height:76px;gap:16px}
+  details p{padding-right:20px;font-size:15px}
+  .site-footer{grid-template-columns:1fr;gap:16px;padding:30px 0}
+  .footer-intro{flex-direction:column;align-items:flex-start;gap:12px}
+  .footer-top{grid-row:3;justify-self:start}
+  .footer-links{gap:0 24px}
+}
+@media screen and (max-width:820px){
+  .label-enhanced .label-product,.label-enhanced .label-list{grid-column:1/-1}
+  .label-enhanced .label-control{grid-column:1/-1;grid-row:2;justify-self:start;margin-top:14px}
+  .label-enhanced .label-list{grid-row:3}
+  .label-enhanced .label-notes{grid-column:1/-1;grid-row:4;margin-top:24px;transform:none}
+  .label-enhanced .label-result{grid-column:1/-1;grid-row:4}
+  .label-enhanced .label-result-inner{margin-top:24px;padding-top:20px}
+  .label-enhanced .label-note p:last-child{font-size:16px}
+}
+@media(max-width:360px){.hero-actions{flex-direction:column}.feature{--w:60vw}}
+
+/* ---------- Motion preferences and print ---------- */
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*:not(.ambient-clouds){animation:none!important;transition:none!important}}
+@media print{.garden-motion,.ambient-clouds,.motion-control,.label-control,.hero-transition{display:none!important}.hero[data-garden-ready] img.hero-art{opacity:1}}
